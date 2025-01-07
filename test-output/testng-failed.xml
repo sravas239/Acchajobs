@@ -3,15 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Tests.AdminLoginTest">
+      <class name="Tests.ResourcesTest">
         <methods>
-          <include name="fillJobDetails"/>
-          <include name="adminLogin"/>
-          <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="navigateToJobsPage"/>
+          <include name="setUp"/>
+          <include name="validateLoginButtonFunctionality"/>
         </methods>
-      </class> <!-- Tests.AdminLoginTest -->
+      </class> <!-- Tests.ResourcesTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

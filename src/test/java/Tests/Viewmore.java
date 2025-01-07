@@ -15,8 +15,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 import java.io.File;
-import java.io.IOException;
 import java.time.Duration;
 
 public class Viewmore {
@@ -26,6 +27,7 @@ public class Viewmore {
     @BeforeClass
     public void setUp() {
         // Set up ChromeDriver
+    	 WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -34,7 +36,7 @@ public class Viewmore {
         driver.get("https://www.acchajobs.com/view-all-jobs");
     }
 
-   // @Test
+ //@Test
     public void testViewMoreButton() throws Exception {
         try {
             // Locate the "View More" button

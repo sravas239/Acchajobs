@@ -5,8 +5,8 @@
     <classes>
       <class name="Tests.AdminLoginTest"/>
       <class name="Tests.Viewmore"/>
-      <class name="Tests.AchaajobTest"/>
       <class name="Tests.ResourcesTest"/>
+      <class name="Tests.AcchajobTest"/>
       <class name="Tests.InternshipTest"/>
       <class name="Tests.Adminregistertest"/>
     </classes>

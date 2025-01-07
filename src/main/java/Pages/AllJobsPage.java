@@ -1,38 +1,18 @@
 package Pages;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class Achaajobpage {
+public class AllJobsPage extends BaseTest{
 
-    // Constructor to initialize PageFactory elements
-    public Achaajobpage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-    }
-
-    // Locators using @FindBy annotation
-    @FindBy(xpath = "//input[@placeholder='Enter skills/designations | Enter location | Enter Experience']")
-    private WebElement searchField;
-
-    @FindBy(xpath = "//button[@class='search-button']")
-    private WebElement searchButton;
-
-    @FindBy(xpath = "//a[contains(text(),'Register Now')]")
-    private WebElement registerNowButton;
-
-    @FindBy(xpath = "//button[@class='login-button']")
-    private WebElement loginButton;
-    
-	@FindBy(id="username") 
-    WebElement txtUsername;
+	public AllJobsPage(WebDriver driver)
+	{
+		super();
+	}
 	
-	@FindBy(id="password") 
-    WebElement txtPassword;
-	
+	//Job's Section Locators and Methods
 	@FindBy(id="location") 
     WebElement txtLocation;
 	
@@ -99,22 +79,4 @@ public class Achaajobpage {
     {
 		txtapplyJobs.click();
     }
-
-    // Actions/Methods to interact with elements
-    public void enterSearchDetails(String details) {
-        searchField.clear();
-        searchField.sendKeys(details);
-    }
-
-    public void clickSearch() {
-        searchButton.click();
-    }
-
-    public void clickRegisterNow() {
-        registerNowButton.click();
-    }
-
-    public void clickLogin() {
-        loginButton.click();
-    }
-}
+}	

@@ -1,105 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
+<testng-results ignored="0" total="9" passed="8" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-03T09:59:27 IST" name="Suite" finished-at="2025-01-03T10:02:39 IST" duration-ms="192450">
+  <suite started-at="2025-01-07T11:34:51 IST" name="Suite" finished-at="2025-01-07T11:35:26 IST" duration-ms="35575">
     <groups>
     </groups>
-    <test started-at="2025-01-03T09:59:27 IST" name="Test" finished-at="2025-01-03T10:02:39 IST" duration-ms="192450">
+    <test started-at="2025-01-07T11:34:51 IST" name="Test" finished-at="2025-01-07T11:35:26 IST" duration-ms="35575">
       <class name="Tests.Adminregistertest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Tests.Adminregistertest@73a1e9a9]" started-at="2025-01-03T10:02:12 IST" name="setUp" finished-at="2025-01-03T10:02:34 IST" duration-ms="22109" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Tests.Adminregistertest@49e5f737]" started-at="2025-01-07T11:35:19 IST" name="setUp" finished-at="2025-01-07T11:35:23 IST" duration-ms="3640" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testValidRegistration()[pri:0, instance:Tests.Adminregistertest@73a1e9a9]" started-at="2025-01-03T10:02:34 IST" name="testValidRegistration" finished-at="2025-01-03T10:02:39 IST" duration-ms="4261" status="PASS">
+        <test-method signature="testValidRegistration()[pri:0, instance:Tests.Adminregistertest@49e5f737]" started-at="2025-01-07T11:35:23 IST" name="testValidRegistration" finished-at="2025-01-07T11:35:26 IST" duration-ms="3272" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidRegistration -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.Adminregistertest@73a1e9a9]" started-at="2025-01-03T10:02:39 IST" name="tearDown" finished-at="2025-01-03T10:02:39 IST" duration-ms="659" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.Adminregistertest@49e5f737]" started-at="2025-01-07T11:35:26 IST" name="tearDown" finished-at="2025-01-07T11:35:26 IST" duration-ms="454" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- Tests.Adminregistertest -->
       <class name="Tests.AdminLoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Tests.AdminLoginTest@42a48628]" started-at="2025-01-03T09:59:27 IST" name="setUp" finished-at="2025-01-03T09:59:38 IST" duration-ms="10793" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Tests.AdminLoginTest@6f4a47c7]" started-at="2025-01-07T11:34:51 IST" name="setUp" finished-at="2025-01-07T11:34:52 IST" duration-ms="981" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="adminLogin()[pri:1, instance:Tests.AdminLoginTest@42a48628]" started-at="2025-01-03T09:59:38 IST" name="adminLogin" finished-at="2025-01-03T09:59:44 IST" duration-ms="6476" status="PASS">
+        <test-method signature="adminLogin()[pri:1, instance:Tests.AdminLoginTest@6f4a47c7]" started-at="2025-01-07T11:34:52 IST" name="adminLogin" finished-at="2025-01-07T11:34:56 IST" duration-ms="4436" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adminLogin -->
-        <test-method signature="navigateToJobsPage()[pri:2, instance:Tests.AdminLoginTest@42a48628]" started-at="2025-01-03T09:59:44 IST" name="navigateToJobsPage" finished-at="2025-01-03T09:59:45 IST" depends-on-methods="Tests.AdminLoginTest.adminLogin" duration-ms="754" status="PASS">
+        <test-method signature="navigateToJobsPage()[pri:2, instance:Tests.AdminLoginTest@6f4a47c7]" started-at="2025-01-07T11:34:56 IST" name="navigateToJobsPage" finished-at="2025-01-07T11:34:57 IST" depends-on-methods="Tests.AdminLoginTest.adminLogin" duration-ms="361" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToJobsPage -->
-        <test-method signature="fillJobDetails()[pri:3, instance:Tests.AdminLoginTest@42a48628]" started-at="2025-01-03T09:59:45 IST" name="fillJobDetails" finished-at="2025-01-03T10:00:00 IST" depends-on-methods="Tests.AdminLoginTest.navigateToJobsPage" duration-ms="14808" status="PASS">
+        <test-method signature="fillJobDetails()[pri:3, instance:Tests.AdminLoginTest@6f4a47c7]" started-at="2025-01-07T11:34:57 IST" name="fillJobDetails" finished-at="2025-01-07T11:35:01 IST" depends-on-methods="Tests.AdminLoginTest.navigateToJobsPage" duration-ms="4515" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fillJobDetails -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.AdminLoginTest@42a48628]" started-at="2025-01-03T10:00:00 IST" name="tearDown" finished-at="2025-01-03T10:00:01 IST" duration-ms="900" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.AdminLoginTest@6f4a47c7]" started-at="2025-01-07T11:35:01 IST" name="tearDown" finished-at="2025-01-07T11:35:02 IST" duration-ms="715" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- Tests.AdminLoginTest -->
-      <class name="Tests.AchaajobTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Tests.AchaajobTest@49e53c76]" started-at="2025-01-03T10:00:01 IST" name="setUp" finished-at="2025-01-03T10:00:21 IST" duration-ms="20298" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="adminLoginTest()[pri:4, instance:Tests.AchaajobTest@49e53c76]" started-at="2025-01-03T10:00:21 IST" name="adminLoginTest" finished-at="2025-01-03T10:00:40 IST" duration-ms="18851" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- adminLoginTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.AchaajobTest@49e53c76]" started-at="2025-01-03T10:00:40 IST" name="tearDown" finished-at="2025-01-03T10:00:40 IST" duration-ms="586" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Tests.AchaajobTest@49e53c76]" started-at="2025-01-03T10:00:40 IST" name="setUp" finished-at="2025-01-03T10:01:13 IST" duration-ms="32507" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="superAdminLoginTest()[pri:5, instance:Tests.AchaajobTest@49e53c76]" started-at="2025-01-03T10:01:13 IST" name="superAdminLoginTest" finished-at="2025-01-03T10:01:21 IST" duration-ms="8249" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- superAdminLoginTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.AchaajobTest@49e53c76]" started-at="2025-01-03T10:01:21 IST" name="tearDown" finished-at="2025-01-03T10:01:22 IST" duration-ms="703" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- Tests.AchaajobTest -->
       <class name="Tests.InternshipTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Tests.InternshipTest@77888435]" started-at="2025-01-03T10:01:49 IST" name="setUp" finished-at="2025-01-03T10:02:06 IST" duration-ms="17390" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Tests.InternshipTest@445b295b]" started-at="2025-01-07T11:35:10 IST" name="setUp" finished-at="2025-01-07T11:35:16 IST" duration-ms="5319" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="fillInternshipForm()[pri:0, instance:Tests.InternshipTest@77888435]" started-at="2025-01-03T10:02:06 IST" name="fillInternshipForm" finished-at="2025-01-03T10:02:12 IST" duration-ms="5093" status="PASS">
+        <test-method signature="fillInternshipForm()[pri:0, instance:Tests.InternshipTest@445b295b]" started-at="2025-01-07T11:35:16 IST" name="fillInternshipForm" finished-at="2025-01-07T11:35:18 IST" duration-ms="2739" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fillInternshipForm -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.InternshipTest@77888435]" started-at="2025-01-03T10:02:12 IST" name="tearDown" finished-at="2025-01-03T10:02:12 IST" duration-ms="659" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.InternshipTest@445b295b]" started-at="2025-01-07T11:35:18 IST" name="tearDown" finished-at="2025-01-07T11:35:19 IST" duration-ms="543" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- Tests.InternshipTest -->
       <class name="Tests.ResourcesTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Tests.ResourcesTest@14cd1699]" started-at="2025-01-03T10:01:22 IST" name="setUp" finished-at="2025-01-03T10:01:47 IST" duration-ms="25543" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Tests.ResourcesTest@1e178745]" started-at="2025-01-07T11:35:02 IST" name="setUp" finished-at="2025-01-07T11:35:05 IST" duration-ms="3373" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="validateNavigationItems()[pri:1, instance:Tests.ResourcesTest@14cd1699]" started-at="2025-01-03T10:01:47 IST" name="validateNavigationItems" finished-at="2025-01-03T10:01:48 IST" duration-ms="465" status="PASS">
+        <test-method signature="validateNavigationItems()[pri:1, instance:Tests.ResourcesTest@1e178745]" started-at="2025-01-07T11:35:05 IST" name="validateNavigationItems" finished-at="2025-01-07T11:35:06 IST" duration-ms="337" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateNavigationItems -->
-        <test-method signature="validateLoginButtonFunctionality()[pri:2, instance:Tests.ResourcesTest@14cd1699]" started-at="2025-01-03T10:01:48 IST" name="validateLoginButtonFunctionality" finished-at="2025-01-03T10:01:48 IST" duration-ms="514" status="PASS">
+        <test-method signature="validateLoginButtonFunctionality()[pri:2, instance:Tests.ResourcesTest@1e178745]" started-at="2025-01-07T11:35:06 IST" name="validateLoginButtonFunctionality" finished-at="2025-01-07T11:35:07 IST" duration-ms="1212" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <button _ngcontent-ng-c2149987414="" routerlink="/login" class="login-button" tabindex="0">...</button> is not clickable at point (1429, 61). Other element would receive the click: <div _ngcontent-ng-c1499588966="" class="popup-container">...</div>
+  (Session info: chrome=131.0.6778.205)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7a9c4063726065df69fa006e3a24bce1, clickElement {id=f.9A309430A7CD84EB7CFE368CBD89FAB4.d.CC14DA0E9DA8B4E7C4DA3B302C400C71.e.3}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\Dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54449}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54449/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (7a9c4063726065df69fa006e3a24bce1)] -> xpath: //button[normalize-space()='Login']]
+Session ID: 7a9c4063726065df69fa006e3a24bce1]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button _ngcontent-ng-c2149987414="" routerlink="/login" class="login-button" tabindex="0">...</button> is not clickable at point (1429, 61). Other element would receive the click: <div _ngcontent-ng-c1499588966="" class="popup-container">...</div>
+  (Session info: chrome=131.0.6778.205)
+Build info: version: '4.12.0', revision: '249f2a7d1b*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7a9c4063726065df69fa006e3a24bce1, clickElement {id=f.9A309430A7CD84EB7CFE368CBD89FAB4.d.CC14DA0E9DA8B4E7C4DA3B302C400C71.e.3}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\Dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54449}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54449/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (7a9c4063726065df69fa006e3a24bce1)] -> xpath: //button[normalize-space()='Login']]
+Session ID: 7a9c4063726065df69fa006e3a24bce1
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+at Tests.ResourcesTest.validateLoginButtonFunctionality(ResourcesTest.java:57)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateLoginButtonFunctionality -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.ResourcesTest@14cd1699]" started-at="2025-01-03T10:01:48 IST" name="tearDown" finished-at="2025-01-03T10:01:49 IST" duration-ms="669" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.ResourcesTest@1e178745]" started-at="2025-01-07T11:35:07 IST" name="tearDown" finished-at="2025-01-07T11:35:07 IST" duration-ms="576" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- Tests.ResourcesTest -->
+      <class name="Tests.AcchajobTest">
+        <test-method is-config="true" signature="setupDriver()[pri:0, instance:Tests.AcchajobTest@1757cd72]" started-at="2025-01-07T11:34:45 IST" name="setupDriver" finished-at="2025-01-07T11:34:51 IST" duration-ms="5819" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupDriver -->
+        <test-method signature="searchJobTest()[pri:1, instance:Tests.AcchajobTest@1757cd72]" started-at="2025-01-07T11:35:07 IST" name="searchJobTest" finished-at="2025-01-07T11:35:08 IST" duration-ms="438" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchJobTest -->
+        <test-method signature="superAdminLoginTest()[pri:4, instance:Tests.AcchajobTest@1757cd72]" started-at="2025-01-07T11:35:08 IST" name="superAdminLoginTest" finished-at="2025-01-07T11:35:10 IST" duration-ms="2527" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- superAdminLoginTest -->
+        <test-method is-config="true" signature="tearDownDriver()[pri:0, instance:Tests.AcchajobTest@1757cd72]" started-at="2025-01-07T11:35:26 IST" name="tearDownDriver" finished-at="2025-01-07T11:35:27 IST" duration-ms="510" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownDriver -->
+      </class> <!-- Tests.AcchajobTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

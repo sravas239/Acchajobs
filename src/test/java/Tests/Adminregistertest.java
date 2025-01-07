@@ -2,6 +2,7 @@ package Tests;
 
 import Pages.AdminRegisterPage;
 import Pages.Superadminlogin;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.time.Duration;
 
@@ -21,7 +22,7 @@ public class Adminregistertest {
 
     @BeforeMethod
     public void setUp() {
-        
+    	  WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("https://www.acchajobs.com/adminregister");
         driver.manage().window().maximize();

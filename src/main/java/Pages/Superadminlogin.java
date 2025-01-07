@@ -25,10 +25,23 @@ public class Superadminlogin {
     @FindBy(xpath = "//button[@type='submit']")  // Login button
     private WebElement loginButton;
 
-   
-    
+    @FindBy(xpath="//button[text()=' Post Management ']") 
+    WebElement lnkPostmanagement;
+	
+	@FindBy(xpath="((//*[@class='row'])/descendant::div)[last()]/button[1]") 
+    public WebElement lnkapproaveJob;
+	
+	//    ((//*[@class='row'])/descendant::div)[last()]/button[1]
 
-    // Actions
+	public void clickOnPostManagement()
+    {
+		lnkPostmanagement.click();
+    }
+	
+	public void clickOnApproavePostRequest() {
+		lnkapproaveJob.click();
+	}
+
     public void enterUsername(String username) {
         usernameField.sendKeys(username);
     }

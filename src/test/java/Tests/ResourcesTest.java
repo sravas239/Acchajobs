@@ -13,6 +13,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class ResourcesTest {
 
     private WebDriver driver;
@@ -26,18 +28,25 @@ public class ResourcesTest {
 
     @BeforeClass
     public void setUp() {
+        // Setup WebDriver and WebDriverWait
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().window().maximize();
+
+        // Navigate to the application
         driver.get("https://www.acchajobs.com");
     }
 
     @Test(priority = 1)
     public void validateNavigationItems() {
         // Validate navigation items are displayed
-        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(HOME_NAV)).isDisplayed(), "Home navigation item is not visible.");
-        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(INTERNSHIPS_NAV)).isDisplayed(), "Internships navigation item is not visible.");
-        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(ONLINE_TRAINING_NAV)).isDisplayed(), "Online Training navigation item is not visible.");
+        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(HOME_NAV)).isDisplayed(),
+                "Home navigation item is not visible.");
+        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(INTERNSHIPS_NAV)).isDisplayed(),
+                "Internships navigation item is not visible.");
+        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(ONLINE_TRAINING_NAV)).isDisplayed(),
+                "Online Training navigation item is not visible.");
         System.out.println("All navigation items are visible.");
     }
 
@@ -47,8 +56,8 @@ public class ResourcesTest {
         WebElement loginButton = wait.until(ExpectedConditions.elementToBeClickable(LOGIN_BUTTON));
         loginButton.click();
 
-        // Validate redirection to login page
-        String expectedUrl = "https://www.acchajobs.com/login"; // Replace with actual login page URL
+        // Validate redirection to the login page
+        String expectedUrl = "https://www.acchajobs.com/login"; // Replace with actual login page URL if different
         wait.until(ExpectedConditions.urlToBe(expectedUrl));
         String actualUrl = driver.getCurrentUrl();
         Assert.assertEquals(actualUrl, expectedUrl, "Login button redirection failed.");
@@ -57,6 +66,7 @@ public class ResourcesTest {
 
     @AfterClass
     public void tearDown() {
+        // Quit the driver after tests are done
         if (driver != null) {
             driver.quit();
         }

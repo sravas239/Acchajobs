@@ -4,18 +4,18 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class InternshipTest {
 
@@ -37,11 +37,11 @@ public class InternshipTest {
     private static final By PERKS_FIELD = By.xpath("//textarea[@formcontrolname='perks']");
     private static final By COMPANY_DESCRIPTION_FIELD = By.xpath("//textarea[@formcontrolname='companyDescription']");
     private static final By CREATE_BUTTON = By.xpath("//button[@type='submit']");
-   // private static final By SUCCESS_MESSAGE = By.id("successMessage");
 
     @BeforeClass
     public void setUp() {
         // Initialize WebDriver
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().window().maximize();
@@ -70,15 +70,15 @@ public class InternshipTest {
             fillField(LAST_DATE_FIELD, "01/31/2025");
             fillField(OPENINGS_FIELD, "10");
             fillField(PERKS_FIELD, "Free snacks, Flexible hours");
-            fillField(COMPANY_DESCRIPTION_FIELD,"openfuturelimited" ); 
+            fillField(COMPANY_DESCRIPTION_FIELD, "openfuturelimited"); 
             clickButton(CREATE_BUTTON);
 
-            // Assert success message
-          //  Assert.assertTrue(
-              //  wait.until(ExpectedConditions.textToBePresentInElementLocated(
-           //         SUCCESS_MESSAGE, "Internship posted successfully.")), 
-                //"Internship form submission failed."
-          //  );
+            // Assert success message (uncomment and modify when success message locator is available)
+            // Assert.assertTrue(
+            //     wait.until(ExpectedConditions.textToBePresentInElementLocated(
+            //         SUCCESS_MESSAGE, "Internship posted successfully.")), 
+            //     "Internship form submission failed."
+            // );
         } catch (Exception e) {
             Assert.fail("Test failed: " + e.getMessage());
         }
@@ -106,7 +106,6 @@ public class InternshipTest {
             Assert.fail("Failed to click the button: " + e.getMessage());
         }
     }
-
 
     private void loginAsAdmin(String username, String password) {
         fillField(By.xpath("//input[@placeholder='Enter your username']"), username);
