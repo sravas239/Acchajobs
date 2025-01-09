@@ -48,7 +48,7 @@ public class InternshipTest {
 
         try {
             driver.get("https://www.acchajobs.com/adminlogindynamic");
-            loginAsAdmin("tester@123", "Test@1234");
+            loginAsAdmin("seenium@123", "Test@1234");
             navigateToInternshipPage();
         } catch (Exception e) {
             Assert.fail("Setup failed: " + e.getMessage());

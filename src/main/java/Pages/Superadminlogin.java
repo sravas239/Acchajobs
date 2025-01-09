@@ -1,13 +1,12 @@
 package Pages;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class Superadminlogin {
-    WebDriver driver;
+    private WebDriver driver;
 
     // Constructor to initialize PageFactory elements
     public Superadminlogin(WebDriver driver) {
@@ -16,32 +15,22 @@ public class Superadminlogin {
     }
 
     // Locators using @FindBy annotation
-    @FindBy(xpath = "//input[@id='username']")  // Replace placeholder or attributes if necessary
+    @FindBy(xpath = "//input[@id='username']")
     private WebElement usernameField;
 
-    @FindBy(xpath = "//input[@id='password']")  // Replace placeholder or attributes if necessary
+    @FindBy(xpath = "//input[@id='password']")
     private WebElement passwordField;
 
-    @FindBy(xpath = "//button[@type='submit']")  // Login button
+    @FindBy(xpath = "//button[@type='submit']")
     private WebElement loginButton;
 
-    @FindBy(xpath="//button[text()=' Post Management ']") 
-    WebElement lnkPostmanagement;
-	
-	@FindBy(xpath="((//*[@class='row'])/descendant::div)[last()]/button[1]") 
-    public WebElement lnkapproaveJob;
-	
-	//    ((//*[@class='row'])/descendant::div)[last()]/button[1]
+    @FindBy(xpath = "//button[text()=' Post Management ']")
+    private WebElement lnkPostManagement;
 
-	public void clickOnPostManagement()
-    {
-		lnkPostmanagement.click();
-    }
-	
-	public void clickOnApproavePostRequest() {
-		lnkapproaveJob.click();
-	}
+    @FindBy(xpath = "((//*[@class='row'])/descendant::div)[last()]/button[1]")
+    private WebElement lnkApproveJob;
 
+    // Actions
     public void enterUsername(String username) {
         usernameField.sendKeys(username);
     }
@@ -54,14 +43,16 @@ public class Superadminlogin {
         loginButton.click();
     }
 
-	
+    public void clickOnPostManagement() {
+        lnkPostManagement.click();
+    }
 
-	public WebElement getUsernameFieldLocator() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public void clickOnApprovePostRequest() {
+        lnkApproveJob.click();
+    }
 
-	
+    // Utility: Return WebElement for username field if needed elsewhere
+    public WebElement getUsernameFieldLocator() {
+        return usernameField;
+    }
 }
-
-

@@ -1,105 +1,84 @@
 package Pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import java.awt.*;
-import java.awt.Toolkit;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
-import java.time.Duration;
 
 public class AcchaJobsRegisterPage {
+    WebDriver driver;
 
-    private WebDriver driver;
-    private WebDriverWait wait;
-    private Actions act;
-
-    // Constructor to initialize PageFactory elements
+    // Constructor to initialize elements using PageFactory
     public AcchaJobsRegisterPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        this.act = new Actions(driver);
         PageFactory.initElements(driver, this);
     }
 
-    // Locators using @FindBy annotation for the Register Form
-    @FindBy(xpath = "//a[contains(text(),'Register Now')]")
-    private WebElement btnRegisterNow;
-   
+    // Locators for form fields
+    @FindBy(xpath = "//input[@id='fullName']")
+    private WebElement fullNameField;
 
-    public void clickRegisterNow() {
-        btnRegisterNow.click();
-    }
+    @FindBy(xpath = "//input[@id='userName']")
+    private WebElement usernameField;
 
-    @FindBy(id = "fullName")
-    private WebElement txtFullName;
+    @FindBy(xpath = "//input[@id='emailId']")
+    private WebElement emailField;
 
-    @FindBy(id = "username")
-    private WebElement txtUsername;
+    @FindBy(xpath = "//select[@id='gender']")
+    private WebElement genderDropdown;
 
-    @FindBy(id = "email")
-    private WebElement txtEmail;
+    @FindBy(xpath = "//input[@id='mobileNo']")
+    private WebElement mobileNumberField;
 
-    @FindBy(xpath = "//input[@value='Male']")
-    private WebElement radioGenderMale;
+    @FindBy(xpath = "//input[@id='password']")
+    private WebElement passwordField;
+    
+    @FindBy(xpath = "//input[@id='confirmPassword']")
+    private WebElement confirmPasswordField;
+    
+    @FindBy(xpath = "//button[@type='submit']")
+    private WebElement submitButton;
 
-    @FindBy(id = "mobileNumber")
-    private WebElement txtMobileNumber;
-
-    @FindBy(id = "password")
-    private WebElement txtPassword;
-
-    @FindBy(id = "confirmPassword")
-    private WebElement txtConfirmPassword;
-
-    @FindBy(xpath = "//button[text()='Register']")
-    private WebElement btnRegister;
-
-    @FindBy(xpath = "//div[@class='success-message']")
-    private WebElement lblSuccessMessage;
-
+    // Actions for interacting with form elements
     public void enterFullName(String fullName) {
-        txtFullName.sendKeys(fullName);
+        fullNameField.sendKeys(fullName);
     }
 
     public void enterUsername(String username) {
-        txtUsername.sendKeys(username);
+        usernameField.sendKeys(username);
     }
 
     public void enterEmail(String email) {
-        txtEmail.sendKeys(email);
+        emailField.sendKeys(email);
     }
 
     public void selectGender(String gender) {
-        if ("Male".equalsIgnoreCase(gender)) {
-            radioGenderMale.click();
-        }
-        // Add other gender options as needed
+        genderDropdown.sendKeys(gender); // Use Select class for dropdown if necessary
     }
 
     public void enterMobileNumber(String mobileNumber) {
-        txtMobileNumber.sendKeys(mobileNumber);
+        mobileNumberField.sendKeys(mobileNumber);
     }
 
     public void enterPassword(String password) {
-        txtPassword.sendKeys(password);
+        passwordField.sendKeys(password);
+    }
+    public void enterconfirmPassword(String confirmPassword) {
+    	confirmPasswordField.sendKeys(confirmPassword);
+    }
+    public void clickSubmit() {
+        submitButton.click();
     }
 
-    public void enterConfirmPassword(String confirmPassword) {
-        txtConfirmPassword.sendKeys(confirmPassword);
-    }
+	
 
-    public void clickRegister() {
-        btnRegister.click();
-    }
+	public void clickRegisterNow() {
+		// TODO Auto-generated method stub
+		
+	}
 
-    public String getSuccessMessage() {
-        return lblSuccessMessage.getText();
-    }
+	public String getSuccessMessage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

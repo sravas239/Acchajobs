@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Tests.AcchajobTest">
+      <class name="Tests.Adminregistertest">
         <methods>
-          <include name="tearDownDriver"/>
-          <include name="searchJobTest"/>
-          <include name="setupDriver"/>
-          <include name="adminLoginTest"/>
+          <include name="setUp"/>
+          <include name="testApproveUser"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- Tests.AcchajobTest -->
+      </class> <!-- Tests.Adminregistertest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

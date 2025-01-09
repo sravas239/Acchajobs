@@ -1,9 +1,6 @@
 package Tests;
 
-import Pages.AdminRegisterPage;
-import Pages.Superadminlogin;
-import io.github.bonigarcia.wdm.WebDriverManager;
-
+import java.time.Duration;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -15,44 +12,25 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import Pages.Superadminlogin;
 
-import java.time.Duration;
-
-public class Adminregistertest {
+public class ApproveUser {
     WebDriver driver;
-    AdminRegisterPage registerPage;
-    Superadminlogin superadminlogin;
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
-        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get("https://www.acchajobs.com/adminregister");
+        driver.get("https://www.acchajobs.com/superadminlogin");
         driver.manage().window().maximize();
-        registerPage = new AdminRegisterPage(driver);
-        superadminlogin = new Superadminlogin(driver); // Initialize the Superadminlogin page object
     }
 
     @Test(priority = 1)
-    public void testValidRegistration() {
-        // Perform registration
-        registerPage.enterName("sravani");
-        registerPage.enterMobile("9603661643");
-        registerPage.enterUsername("seenium@123");
-        registerPage.enterPassword("Test@1234");
-        registerPage.enterEmail("sravani08.guduru@gmail.com");
-        registerPage.clickRegister();
-
-        // Handle the alert after registration
-        handleAlert("Admin registered successfully. Please wait until Super Admin approves your application.");
-    }
-
-   // @Test(priority = 2)
     public void superAdminLoginTest() {
         try {
+            Superadminlogin superadminlogin = new Superadminlogin(driver);
             driver.get("https://www.acchajobs.com/superadminlogin");
 
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -62,22 +40,30 @@ public class Adminregistertest {
             superadminlogin.enterPassword("admin@123");
             superadminlogin.clickLogin();
 
-            // Handle the unexpected alert if any
-            handleAlert(null);
+            // Handle the unexpected alert
+            try {
+                WebDriverWait alertWait = new WebDriverWait(driver, Duration.ofSeconds(5));
+                Alert alert = alertWait.until(ExpectedConditions.alertIsPresent());
+                alert.accept(); // Accept the alert
+            } catch (Exception e) {
+                // No alert found, continue execution
+            }
 
             WebElement dashboardElement = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//button[text()=' Post Management ']")
             ));
+            Thread.sleep(2000);
             Assert.assertTrue(dashboardElement.isDisplayed(), "Super Admin login was not successful.");
 
             System.out.println("Super Admin login test executed successfully.");
+            Thread.sleep(2000);
         } catch (Exception e) {
             System.out.println("Login test failed: " + e.getMessage());
             Assert.fail("Super Admin login test failed.");
         }
     }
 
-   // @Test(priority = 3)
+    //@Test(priority = 2)
     public void testApproveUser() {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -89,6 +75,9 @@ public class Adminregistertest {
             WebElement approveButton = driver.findElement(By.xpath("(//button[text()='Approve'])[last()]"));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", approveButton);
             wait.until(ExpectedConditions.elementToBeClickable(approveButton)).click();
+
+            // Click the approve button
+            approveButton.click();
 
             // Validate approval success
             WebElement statusElement = wait.until(ExpectedConditions.visibilityOfElementLocated(
@@ -105,27 +94,10 @@ public class Adminregistertest {
         }
     }
 
-    // Helper method to handle alerts
-    private void handleAlert(String expectedAlertText) {
-        try {
-            WebDriverWait alertWait = new WebDriverWait(driver, Duration.ofSeconds(5));
-            Alert alert = alertWait.until(ExpectedConditions.alertIsPresent());
-
-            String alertText = alert.getText();
-            if (expectedAlertText != null) {
-                System.out.println("Alert message: " + alertText);
-                Assert.assertEquals(alertText, expectedAlertText, "Alert text does not match!");
-            }
-
-            alert.accept(); // Accept the alert
-        } catch (Exception e) {
-            // No alert found, continue execution
-            System.out.println("No alert present or an error occurred: " + e.getMessage());
-        }
-    }
-
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }

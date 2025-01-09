@@ -62,4 +62,16 @@ public class AdminRegisterPage {
     public void acceptAlert() {
         driver.switchTo().alert().accept();
     }
+
+	
+
+	public void selectGender(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void clickSubmit() {
+		// TODO Auto-generated method stub
+		
+	}
 }

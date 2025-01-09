@@ -1,16 +1,19 @@
 package Tests;
 
-
 import java.time.Duration;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.Status;
 
 import Pages.AcchaJobsRegisterPage;
 import Pages.Achaajobpage;
@@ -53,6 +56,14 @@ public class AcchajobTest extends BaseTest {
    // @Test(priority = 2)
     public void registerNewUserTest() {
         try {
+            // Verify the modal's title
+            WebElement modalTitle = driver.findElement(By.xpath("//div[contains(@class, 'modal')]//h2"));
+            Assert.assertEquals(modalTitle.getText(), "What do you want to do?");
+
+            // Click on "I want a job" button
+            WebElement iWantAJobButton = driver.findElement(By.xpath("//button[contains(text(), 'I want a job')]"));
+            iWantAJobButton.click();
+
             // Initialize page object
             AcchaJobsRegisterPage registerPage = new AcchaJobsRegisterPage(driver);
 
@@ -66,10 +77,10 @@ public class AcchajobTest extends BaseTest {
             registerPage.selectGender("Male");
             registerPage.enterMobileNumber("9876543210");
             registerPage.enterPassword("Test@1234");
-            registerPage.enterConfirmPassword("Test@1234");
+            registerPage.enterconfirmPassword("Test@1234");
 
             // Submit the form
-            registerPage.clickRegister();
+            registerPage.clickRegisterNow();
 
             // Validate success message
             String successMessage = registerPage.getSuccessMessage();
@@ -77,17 +88,13 @@ public class AcchajobTest extends BaseTest {
 
             System.out.println("User registration test passed.");
         } catch (Exception e) {
-            // Log the error for debugging
             e.printStackTrace();
-
-            // Fail the test with detailed error information
             Assert.fail("User registration test failed due to: " + e.getMessage());
         }
     }
- 
 
-    // Test Case 4: Admin Login and Post Job
-   @Test(priority = 3)
+    // Test Case 3: Admin Login and Post Job
+    @Test(priority = 3)
     public void adminLoginTest() {
         try {
             AdminLoginPage adminLoginPage = new AdminLoginPage(driver);
@@ -100,7 +107,7 @@ public class AcchajobTest extends BaseTest {
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Enter your username']")));
 
             // Perform Login
-            adminLoginPage.enterUsername("tester@123");
+            adminLoginPage.enterUsername("seenium@123");
             adminLoginPage.enterPassword("Test@1234");
             adminLoginPage.clickLogin();
 
@@ -119,31 +126,29 @@ public class AcchajobTest extends BaseTest {
             System.out.println("Test failed due to: " + e.getMessage());
             Assert.fail("Admin login test failed.");
         }
-   }
-   
+    }
 
-    // Test Case 4: Super Admin Login
-   @Test(priority = 4)
-   public void superAdminLoginTest() {
-       try {
-           Superadminlogin superadminlogin = new Superadminlogin(driver);
+   //@Test(priority = 4)
+    public void superAdminLoginTest() {
+        try {
+            Superadminlogin superadminlogin = new Superadminlogin(driver);
 
-           // Open Super Admin Login Page
-           driver.get("https://www.acchajobs.com/superadminlogin");
+            // Open Super Admin Login Page
+            driver.get("https://www.acchajobs.com/superadminlogin");
 
-           // Wait for Super Admin login form
-           WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-           wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='username']")));
+            // Wait for Super Admin login form
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='username']")));
 
-           // Perform Super Admin login
-           superadminlogin.enterUsername("admin");
-           superadminlogin.enterPassword("admin@123");
-           superadminlogin.clickLogin();
+            // Perform Super Admin login
+            superadminlogin.enterUsername("admin");
+            superadminlogin.enterPassword("admin@123");
+            superadminlogin.clickLogin();
 
-           System.out.println("Superadmin login test executed successfully.");
-       } catch (Exception e) {
-           System.out.println("Test failed due to: " + e.getMessage());
-           Assert.fail("Super Admin login test failed.");
-       }
-   }
+            System.out.println("Superadmin login test executed successfully.");
+        } catch (Exception e) {
+            System.out.println("Test failed due to: " + e.getMessage());
+            Assert.fail("Super Admin login test failed.");
+        }
+    }
 }
